@@ -3,6 +3,13 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 import os
 
+st.title("🎬 AI Movie Scout")
+
+# Everything that takes time goes inside this spinner
+with st.spinner("Downloading AI Model and loading Database... This may take a minute on first launch."):
+    model, collection = load_assets() # Your loading function
+    st.success("AI is Online!")
+
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Movie AI Recommender", page_icon="🍿", layout="wide")
 
